@@ -8,10 +8,15 @@ import { ProductService } from '../product.service';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-  products:Product[];
+  products: Product[];
+  selectedProduct: Product;
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    this.products=this.productService.getProducts();
+    this.products = this.productService.getProducts();
+  }
+
+  onSelectProduct(product: Product) {
+    this.selectedProduct = product;
   }
 }
