@@ -1,4 +1,5 @@
 <div *ngIf="product" class="mt-3">
+    <input type="hidden" #id name="id" [value]="product.id">
     <div class="form-group">
         <label for="name">name</label>
         <input [value]="product.name" #name type="text" class="form-control" name="name">
@@ -13,5 +14,5 @@
             <label for="" class="custom-control-label" for="isActive"></label>
         </div>
     </div>
-    <button class="btn btn-primary" (click)="addProduct(name.value,price.name,isActive.checked);name.value='';price.value='';isActive.checked=false">Update Product</button>
+    <button class="btn btn-primary" (click)="addProduct(id.value,name.value,price.name,isActive.checked);name.value='';price.value='';isActive.checked=false">Update Product</button>
 </div>
