@@ -18,11 +18,12 @@ export class ProductFormComponent implements OnInit {
     console.log(isActive);
 
     const p = new Product(
-      this.productService.getProducts().length + 1,
+      //this.productService.getProducts().length + 1,
+      0,
       name,
       price,
       isActive
     );
-    this.productService.addProduct(p);
+    this.productService.saveProduct(p);
   }
 }

@@ -13,7 +13,19 @@ export class ProductService {
     return this.model.products;
   }
 
-  addProduct(product: Product) {
-    this.model.products.push(product);
+  getProductById(id) {
+    return this.model.products.find((p) => p.id == id);
+  }
+
+  saveProduct(product: Product) {
+    if (product.id == 0) {
+      (product.id = this.getProducts().length + 1),
+        this.model.products.push(product);
+    } else {
+      const p = this.getProductById(product.id);
+      p.name = product.name;
+      p.price = product.price;
+      p.isActive = product.isActive;
+    }
   }
 }

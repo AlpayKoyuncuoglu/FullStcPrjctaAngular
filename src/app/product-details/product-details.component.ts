@@ -14,17 +14,10 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addProduct(name: any, price: any, isActive: any) {
-    console.log(name);
-    console.log(price);
-    console.log(isActive);
+  addProduct(id, name: any, price: any, isActive: any) {
+    const p = new Product(id, name, price, isActive);
 
-    const p = new Product(
-      this.productService.getProducts().length + 1,
-      name,
-      price,
-      isActive
-    );
-    this.productService.addProduct(p);
+    this.productService.saveProduct(p);
+    this.product = null;
   }
 }
