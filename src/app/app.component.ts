@@ -7,14 +7,5 @@ import { Model } from './Model';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'fllstck';
-  model = new Model();
 
-  getName() {
-    return this.model.categoryName;
-  }
-
-  getProducts() {
-    return this.model.products;
-  }
 }
