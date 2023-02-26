@@ -15,7 +15,7 @@
         </thead>
         <tbody>
           <tr
-            *ngFor="let p of products; let i = index"
+            *ngFor="let p of getProducts(); let i = index"
             [class.bg-secondary]="p.isActive == false"
           >
             <td>{{ i + 1 }} {{ p.id }}</td>
@@ -23,7 +23,7 @@
             <td>{{ p.price }}</td>
             <td>
               <button class="btn btn-primary" (click)="onSelectProduct(p)">Edit</button>
-              <button class="btn btn-danger">Delete</button>
+              <button class="btn btn-danger" (click)="deleteProduct(p)">Delete</button>
             </td>
           </tr>
         </tbody>

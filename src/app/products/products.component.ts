@@ -13,10 +13,18 @@ export class ProductsComponent implements OnInit {
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
+    //this.products = this.productService.getProducts();
+  }
+  getProducts(): Product[] {
+    return this.productService.getProducts();
   }
 
   onSelectProduct(product: Product) {
     this.selectedProduct = product;
+  }
+
+  deleteProduct(product: Product) {
+    this.productService.deleteProduct(product);
+    //this.ngOnInit();
   }
 }
