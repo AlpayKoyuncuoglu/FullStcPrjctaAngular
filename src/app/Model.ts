@@ -1,10 +1,8 @@
 export class Model {
 
-  categoryName: string;
   products: Array<Product>;
 
   constructor() {
-    this.categoryName = 'Telefon';
     this.products = [
         new Product(1,'samsung s5', 2000, true ),
         new Product(2,'samsung s6', 3000, true ),
