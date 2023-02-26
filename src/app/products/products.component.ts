@@ -1,25 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Model } from '../Model';
+import { Model, Product } from '../Model';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-
-  constructor() { }
+  products:Product[];
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-  }
-  title = 'fllstck';
-  model = new Model();
-
-  getName() {
-    return this.model.categoryName;
-  }
-
-  getProducts() {
-    return this.model.products;
+    this.products=this.productService.getProducts();
   }
 }

@@ -1,4 +1,3 @@
-<h3 class="bg-primary text-white p-2">{{ getName() }} Kategorisi</h3>
 <table class="table table-bordered table-stripped">
   <thead>
     <tr>
@@ -10,7 +9,7 @@
   </thead>
   <tbody>
     <tr
-      *ngFor="let p of getProducts(); let i = index"
+      *ngFor="let p of products; let i = index"
       [class.bg-secondary]="p.isActive == false"
     >
       <td>{{ i + 1 }} {{ p.id }}</td>
