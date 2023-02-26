@@ -1,6 +1,6 @@
-<h3 class="bg-primary text-white p-2">Telefon Kategorisi</h3>
+<h3 class="bg-primary text-white p-2">{{ categoryName }} Kategorisi</h3>
 <table class="table table-bordered table-stripped">
-    <thead> 
+  <thead>
     <tr>
       <th>Id</th>
       <th>Name</th>
@@ -9,14 +9,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-    <td>1</td>
-    <td>Samsung S9</td>
-    <td>4000</td>
-    <td>
-      <button class="btn btn-primary">Edit</button>
-      <button class="btn btn-danger">Delete</button>
-    </td>
-</tr>
+    <tr *ngFor="let p of products;let i=index" [class.bg-secondary]="p.isActive==false">
+      <td>{{i+1}} {{ p.id }}</td>
+      <td>{{ p.name }}</td>
+      <td>{{ p.price }}</td>
+      <td>
+        <button class="btn btn-primary">Edit</button>
+        <button class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
   </tbody>
 </table>
